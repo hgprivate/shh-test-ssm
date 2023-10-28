@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test SpringMVC</title>
+</head>
+<body>
+    <h1>hello, spring mvc.</h1>
+    <a th:href="@{/mvc/page1}">访问page1</a>
+
+    <br/><hr/>
+
+    域对象数据：<p th:text="${name}"></p>
+</body>
+</html>

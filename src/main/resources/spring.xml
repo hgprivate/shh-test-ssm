@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--开启spring注解扫描-->
+    <context:component-scan base-package="cn.shh.test.ssm"/>
+    <!--开启aop（基于注解）-->
+    <aop:aspectj-autoproxy/>
+
+    <!--引入jdbc.properties文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--配置数据源-->
+    <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+
+    <!--配置声明式事务-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--配置 使用注解来开启事务-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--配置事务通知及相关属性-->
+    <tx:advice id="ssmAdive" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="insert*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="get*" propagation="REQUIRED" isolation="DEFAULT" read-only="true"/>
+            <tx:method name="query*" propagation="REQUIRED" isolation="DEFAULT" read-only="true"/>
+            <tx:method name="update*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="delete*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <!--
+            配置切入点
+                - @annotation(cn.shh.test.ssm.common.annotations.SSMLogger)
+                - execution(* cn.shh.test.ssm.service.impl.*.*(..))
+        -->
+        <aop:pointcut id="ssmPointCut" expression="execution(* cn.shh.test.ssm.service.impl.*.*(..))"/>
+        <aop:advisor advice-ref="ssmAdive" pointcut-ref="ssmPointCut"></aop:advisor>
+        <!--<aop:aspect ref="">
+            <aop:before method="before" pointcut-ref="ssmPointCut"></aop:before>
+            <aop:after method="after" pointcut-ref="ssmPointCut"></aop:after>
+            <aop:after-returning method="afterReturn" pointcut-ref="ssmPointCut"></aop:after-returning>
+            <aop:after-throwing method="afterThrow" pointcut-ref="ssmPointCut"></aop:after-throwing>
+            <aop:around method="around" pointcut-ref="ssmPointCut"></aop:around>
+        </aop:aspect>-->
+    </aop:config>
+
+    <!--配置SqlSessionFactoryBean，可以直接使用SqlSessionFactory-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="cn.shh.test.ssm.pojo"/>
+        <!--
+            设置映射文件的路径。
+            注意：mapper xml映射文件的包与mapper接口的包不一样时才需要配置。
+        -->
+        <!--<property name="mapperLocations" value="classpath:mappers/*.xml"/>-->
+    </bean>
+
+
+    <!--
+        Mapper接口扫描配置器
+        作用：扫描指定路径的mapper接口，自动为其创建代理。我们可以直接注入使用。
+    -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.shh.test.ssm.mapper"/>
+    </bean>
+</beans>

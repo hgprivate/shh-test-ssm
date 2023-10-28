@@ -1,0 +1,1 @@
+Spring、SpringMVC、MyBatis整合测试项目，仅供学习使用。
