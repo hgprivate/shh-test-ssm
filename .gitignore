@@ -39,3 +39,4 @@ mvnw.cmd
 .mvn
 */target
 log
+.DS_Store
