@@ -38,5 +38,5 @@ mvnw
 mvnw.cmd
 .mvn
 */target
-*/log
+log
 .DS_Store
