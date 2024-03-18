@@ -12,7 +12,7 @@ public interface DeptMapper {
     public void insert(Dept dept);
     Dept getDeptById(@Param("dId") int dId);
     public List<Dept> getAllDept();
-    public void updateById(Dept dept);
+    public int updateById(Dept dept);
     public int deleteById(@Param("id") int id);
     public int deleteByIds(@Param("ids") String ids);
     public int deleteByIds2(@Param("ids") HashSet<Integer> ids);

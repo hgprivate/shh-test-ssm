@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 
 import java.util.HashSet;
 import java.util.List;
@@ -15,12 +17,13 @@ import java.util.List;
 /**
  * mybatis 增删改查基础测试
  */
+@SpringJUnitWebConfig(locations = {"classpath:spring.xml", "classpath:spring-mvc.xml"})
 public class MyBatisBaseTest {
-    private SqlSession sqlSession;
+    @Autowired
+    private UserMapper userMapper;
 
     @Test
     public void testInsert() {
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         User user = new User();
         user.setUname("李四4");
         user.setPassword("123321");
@@ -29,25 +32,25 @@ public class MyBatisBaseTest {
         user.setEmail("lisi@qq.com");
         userMapper.insert(user);
         System.out.println("插入成功。");
+
     }
 
     @Test
     public void testGetById() {
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         User user = userMapper.getById(1);
         System.out.println("user: " + user);
+
     }
 
     @Test
     public void testGetAll() {
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         List<User> userList = userMapper.getAll();
         userList.forEach(System.out::println);
+
     }
 
     @Test
     public void testUpdate() {
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         User user = new User();
         user.setId(9);
         user.setUname("王五");
@@ -57,11 +60,11 @@ public class MyBatisBaseTest {
         user.setEmail("wangwu@qq.com");
         int result = userMapper.updateById(user);
         System.out.println(1 == result ? "修改成功" : "修改失败");
+
     }
 
     @Test
     public void testDelete() {
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         User user = new User();
         HashSet<Integer> ids = new HashSet<>();
         ids.add(8);
@@ -69,19 +72,6 @@ public class MyBatisBaseTest {
         ids.add(10);
         int result = userMapper.deleteByIds(ids);
         System.out.println(0 < result ? "删除成功" : "删除失败");
-    }
 
-    @BeforeEach
-    public void init(){
-        System.setProperty("pagehelper.banner", "false");
-        SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
-        SqlSession sqlSession = sqlSessionFactory.openSession(true);
-        this.sqlSession =sqlSession;
-    }
-    @AfterEach
-    public void close(){
-        if (sqlSession != null){
-            sqlSession.close();
-        }
     }
 }

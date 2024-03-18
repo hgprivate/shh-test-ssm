@@ -11,6 +11,11 @@
         <setting name="aggressiveLazyLoading" value="false"/>
         <setting name="cacheEnabled" value="true"/>
     </settings>
+
+    <!--类型别名-->
+    <typeAliases>
+        <package name="cn.shh.test.ssm.pojo"/>
+    </typeAliases>
     
     <plugins>
         <!--分页插件-->
@@ -32,7 +37,7 @@
                 - JNDI：这个数据源实现是为了能在如 EJB 或应用服务器这类容器中使用，容器可以集中或在外部配置数据源，
                         然后放置一个 JNDI 上下文的数据源引用。
     -->
-    <!--<environments default="dev">
+    <environments default="dev">
         <environment id="dev">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
@@ -51,5 +56,5 @@
                 <property name="password" value="root666"/>
             </dataSource>
         </environment>
-    </environments>-->
+    </environments>
 </configuration>
