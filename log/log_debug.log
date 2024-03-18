@@ -1,0 +1,59 @@
+2023-10-28 16:13:25.890 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-10-28 16:13:26.172 [main] DEBUG net.sf.ehcache.config.ConfigurationFactory - Configuring ehcache from ehcache.xml found in the classpath: file:/Users/shh/Java/cache/idea-workspace/shh-test-ssm/target/classes/ehcache.xml
+2023-10-28 16:13:26.172 [main] DEBUG net.sf.ehcache.config.ConfigurationFactory - Configuring ehcache from URL: file:/Users/shh/Java/cache/idea-workspace/shh-test-ssm/target/classes/ehcache.xml
+2023-10-28 16:13:26.173 [main] DEBUG net.sf.ehcache.config.ConfigurationFactory - Configuring ehcache from InputStream
+2023-10-28 16:13:26.179 [main] DEBUG net.sf.ehcache.config.BeanHandler - Ignoring ehcache attribute xmlns:xsi
+2023-10-28 16:13:26.179 [main] DEBUG net.sf.ehcache.config.BeanHandler - Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2023-10-28 16:13:26.179 [main] DEBUG net.sf.ehcache.config.DiskStoreConfiguration - Disk Store Path: D:\tmp\ssm
+2023-10-28 16:13:26.184 [main] DEBUG net.sf.ehcache.CacheManager - Creating new CacheManager with default config
+2023-10-28 16:13:26.184 [main] DEBUG net.sf.ehcache.util.PropertyUtil - propertiesString is null.
+2023-10-28 16:13:26.187 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper - No CacheManagerEventListenerFactory class specified. Skipping...
+2023-10-28 16:13:26.206 [main] DEBUG net.sf.ehcache.Cache - No BootstrapCacheLoaderFactory class specified. Skipping...
+2023-10-28 16:13:26.206 [main] DEBUG net.sf.ehcache.Cache - CacheWriter factory not configured. Skipping...
+2023-10-28 16:13:26.206 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper - No CacheExceptionHandlerFactory class specified. Skipping...
+2023-10-28 16:13:26.208 [main] DEBUG net.sf.ehcache.Cache - No BootstrapCacheLoaderFactory class specified. Skipping...
+2023-10-28 16:13:26.208 [main] DEBUG net.sf.ehcache.Cache - CacheWriter factory not configured. Skipping...
+2023-10-28 16:13:26.208 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper - No CacheExceptionHandlerFactory class specified. Skipping...
+2023-10-28 16:13:26.213 [main] DEBUG net.sf.ehcache.store.MemoryStore - Initialized net.sf.ehcache.store.MemoryStore for test_mybatis2l
+2023-10-28 16:13:26.221 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2023-10-28 16:13:26.221 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2023-10-28 16:13:26.222 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2023-10-28 16:13:26.222 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2023-10-28 16:13:26.222 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2023-10-28 16:13:26.222 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: REMOTE_SIZE
+2023-10-28 16:13:26.222 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2023-10-28 16:13:26.226 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: OFFHEAP_GET
+2023-10-28 16:13:26.226 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: OFFHEAP_PUT
+2023-10-28 16:13:26.226 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: OFFHEAP_REMOVE
+2023-10-28 16:13:26.226 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: DISK_GET
+2023-10-28 16:13:26.227 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: DISK_PUT
+2023-10-28 16:13:26.227 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: DISK_REMOVE
+2023-10-28 16:13:26.227 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: XA_COMMIT
+2023-10-28 16:13:26.227 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: XA_ROLLBACK
+2023-10-28 16:13:26.227 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: XA_RECOVERY
+2023-10-28 16:13:26.228 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: CLUSTER_EVENT
+2023-10-28 16:13:26.228 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: NONSTOP
+2023-10-28 16:13:26.230 [main] DEBUG net.sf.ehcache.Cache - Initialised cache: test_mybatis2l
+2023-10-28 16:13:26.230 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper - CacheDecoratorFactory not configured. Skipping for 'test_mybatis2l'.
+2023-10-28 16:13:26.230 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper - CacheDecoratorFactory not configured for defaultCache. Skipping for 'test_mybatis2l'.
+2023-10-28 16:13:26.231 [main] DEBUG net.sf.ehcache.store.MemoryStore - Initialized net.sf.ehcache.store.MemoryStore for cn.shh.test.ssm.mapper.CacheMapper
+2023-10-28 16:13:26.231 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE
+2023-10-28 16:13:26.232 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LOCAL_OFFHEAP_SIZE_BYTES
+2023-10-28 16:13:26.232 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LOCAL_DISK_SIZE
+2023-10-28 16:13:26.232 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LOCAL_DISK_SIZE_BYTES
+2023-10-28 16:13:26.232 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: WRITER_QUEUE_LENGTH
+2023-10-28 16:13:26.232 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: REMOTE_SIZE
+2023-10-28 16:13:26.232 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Pass-Through Statistic: LAST_REJOIN_TIMESTAMP
+2023-10-28 16:13:26.232 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: OFFHEAP_GET
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: OFFHEAP_PUT
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: OFFHEAP_REMOVE
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: DISK_GET
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: DISK_PUT
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: DISK_REMOVE
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: XA_COMMIT
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: XA_ROLLBACK
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: XA_RECOVERY
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: CLUSTER_EVENT
+2023-10-28 16:13:26.233 [main] DEBUG n.s.e.statistics.extended.ExtendedStatisticsImpl - Mocking Operation Statistic: NONSTOP
+2023-10-28 16:13:26.234 [main] DEBUG net.sf.ehcache.Cache - Initialised cache: cn.shh.test.ssm.mapper.CacheMapper
+2023-10-28 16:13:26.234 [main] DEBUG net.sf.ehcache.config.ConfigurationHelper - CacheDecoratorFactory not configured for defaultCache. Skipping for 'cn.shh.test.ssm.mapper.CacheMapper'.
